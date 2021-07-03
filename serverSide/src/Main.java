@@ -15,6 +15,7 @@ public class Main {
                 serverSocket = new ServerSocket(1111);
                 socket = serverSocket.accept();
                 out = new PrintWriter(socket.getOutputStream());
+                System.out.println("Connection with client established");
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -22,9 +23,12 @@ public class Main {
 
             String result;
             String command = "python bme280.py";
+            System.out.println("Getting data from the sensor");
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            System.out.println("Sending data:");
             while ((result = br.readLine()) != null) {
+                System.out.println(result);
                 out.println(result);
             }
 
