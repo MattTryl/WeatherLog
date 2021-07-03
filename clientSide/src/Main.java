@@ -11,7 +11,7 @@ public class Main {
         String server = "192.168.0.227";
         try
         {
-            Socket socket = new Socket(server, 22);
+            Socket socket = new Socket(server, 1111);
             PrintStream out = new PrintStream(socket.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 

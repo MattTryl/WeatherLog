@@ -12,7 +12,7 @@ public class Main {
         ServerSocket serverSocket = null;
         while(true) {
             try {
-                serverSocket = new ServerSocket(22);
+                serverSocket = new ServerSocket(1111);
                 socket = serverSocket.accept();
                 out = new PrintWriter(socket.getOutputStream());
 
